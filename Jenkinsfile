@@ -5,9 +5,10 @@ pipeline {
          stage('Build') {
             agent any
             steps {
+                echo 'Building..'
                 checkout scm
                 sh 'make'
-                stash includes: '**/target/*.jar', name: 'app' 
+                stash includes: '**/target/*.jar', name: 'springdemo' 
             }
         }
         stage('Test') {
