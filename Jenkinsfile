@@ -165,11 +165,11 @@ pipeline
            }
           else
            {
-            bat returnStatus: true, script: 'sc stop Tomcat8'
+            bat returnStatus: true, script: 'sc stop tomcat10'
             sleep(time:30, unit:"SECONDS")
             bat returnStatus: true, script: 'C:\\scripts\\clean.bat'
             bat returnStatus: true, script: 'robocopy "target" "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps" Test.war'
-            bat 'sc start Tomcat8'
+            bat 'sc start Tomcat10'
             sleep(time:30, unit:"SECONDS")
            }
          }
