@@ -150,10 +150,7 @@ pipeline
            }
          }
        }
-      post
-       {
-      
-       }
+   
      }
 
     stage('Deploy test')
