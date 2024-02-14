@@ -152,10 +152,7 @@ pipeline
        }
       post
        {
-        always
-         {
-          publishHTML(target: [reportName: 'Site', reportDir: 'target/site', reportFiles: 'index.html', keepAll: false])
-         }
+      
        }
      }
 
