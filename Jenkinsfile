@@ -4,8 +4,8 @@ pipeline
 
   tools
    {
-    maven 'apache-maven-latest'
-    jdk 'jdk-17.0.9'
+    maven 'Maven'
+    jdk 'Jdk17'
    }
 
   options
