@@ -5,7 +5,7 @@ pipeline
   tools
    {
     maven 'Maven'
-    jdk 'Jdk17'
+    jdk 'JDK17'
    }
 
   options
