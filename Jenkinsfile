@@ -8,7 +8,7 @@ pipeline {
                 echo 'Building..'
                 echo "checkout from git"
                 git([url: 'https://github.com/HiranmayiChitta/servicesrepository.git', branch: 'master'])
-                -B -DskipTests clean install
+                bat 'mvn clean install'
                 stash includes: '**/target/springdemo.jar', name: 'springdemo' 
             }
         }
