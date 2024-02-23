@@ -165,7 +165,7 @@ pipeline
            }
           else
            {
-            bat returnStatus: true, script: 'sc stop tomcat10'
+            bat returnStatus: true, script: 'C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\bin\\stop.bat'
             sleep(time:30, unit:"SECONDS")
             bat returnStatus: true, script: 'C:\\scripts\\clean.bat'
             bat returnStatus: true, script: 'robocopy "target" "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps" Test.war'
