@@ -168,7 +168,7 @@ pipeline
             bat returnStatus: true, script: 'C:\\apache-tomcat-8.5.98\\bin\\shutdown.bat'
             sleep(time:30, unit:"SECONDS")
             bat returnStatus: true, script: 'C:\\scripts\\clean.bat'
-            bat returnStatus: true, script: 'robocopy "target" "C:\\apache-tomcat-8.5.98\\webapps" Test.war'
+            bat returnStatus: true, script: 'robocopy "target" "C:\\apache-tomcat-8.5.98\\webapps" springdemo.war'
             bat 'C:\\apache-tomcat-8.5.98\\bin\\startup.bat'
             sleep(time:30, unit:"SECONDS")
            }
