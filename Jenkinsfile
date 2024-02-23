@@ -169,7 +169,7 @@ pipeline
             sleep(time:30, unit:"SECONDS")
             bat returnStatus: true, script: 'C:\\scripts\\clean.bat'
             bat returnStatus: true, script: 'robocopy "target" "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps" Test.war'
-            bat 'C:/apache-tomcat-8.5.98/bin/startup.bat'
+            bat 'C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\bin\\startup.bat'
             sleep(time:30, unit:"SECONDS")
            }
          }
