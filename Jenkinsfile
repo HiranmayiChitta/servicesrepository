@@ -4,8 +4,8 @@ pipeline
 
   tools
    {
-    maven 'Maven'
-    jdk 'JDK17'
+    maven 'Maven3'
+    jdk 'JDK8'
    }
 
   options
@@ -77,7 +77,13 @@ pipeline
            }
          }
        }
-      
+      post
+       {
+        always
+         {
+          junit testResults: 'target/surefire-reports/*.xml'
+         }
+       }
      }
 
     stage('Sanity check')
@@ -150,7 +156,13 @@ pipeline
            }
          }
        }
-   
+      post
+       {
+        always
+         {
+          publishHTML(target: [reportName: 'Site', reportDir: 'target/site', reportFiles: 'index.html', keepAll: false])
+         }
+       }
      }
 
     stage('Deploy test')
@@ -165,11 +177,11 @@ pipeline
            }
           else
            {
-            bat returnStatus: true, script: 'sc stop tomcat10'
+            bat returnStatus: true, script: 'sc stop Tomcat8'
             sleep(time:30, unit:"SECONDS")
             bat returnStatus: true, script: 'C:\\scripts\\clean.bat'
             bat returnStatus: true, script: 'robocopy "target" "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps" Test.war'
-            bat 'sc start Tomcat10'
+            bat 'C:\apache-tomcat-8.5.98\bin\startup.bat'
             sleep(time:30, unit:"SECONDS")
            }
          }
