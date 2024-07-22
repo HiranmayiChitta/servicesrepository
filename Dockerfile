@@ -1,4 +1,4 @@
-FROM openjdk:11
+FROM openjdk:17
 RUN echo HIRANMAYI1
 EXPOSE 8080
 RUN echo HIRANMAYI2
