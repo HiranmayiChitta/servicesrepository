@@ -2,7 +2,7 @@ pipeline
  {
   agent any
    environment {
-        PATH = "C:\\WINDOWS\\SYSTEM32",
+        PATH = "C:\\WINDOWS\\SYSTEM32"
          CATALINA_HOME="C:\\apache-tomcat-8.5.98"
     }
   tools
